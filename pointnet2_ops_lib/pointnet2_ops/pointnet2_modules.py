@@ -193,7 +193,7 @@ class PointnetFPModule(nn.Module):
             )
         else:
             interpolated_feats = known_feats.expand(
-                *(known_feats.size()[0:2] + [unknown.size(1)])
+                list(known_feats.size()[0:2]) + [unknown.size(1)]
             )
 
         if unknow_feats is not None:
